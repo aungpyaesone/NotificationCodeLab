@@ -65,9 +65,15 @@ public class MainActivity extends AppCompatActivity {
         notficationButtonState(false,false,true);
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.mascot_1);
         NotificationCompat.Builder builder = getNotificationBuilder();
-        builder.setStyle(new NotificationCompat.BigPictureStyle()
+       /* builder.setStyle(new NotificationCompat.BigPictureStyle()
                         .bigPicture(bitmap)
-                        .setBigContentTitle("Notification Updated !"));
+                        .setBigContentTitle("Notification Updated !"));*/
+        builder.setStyle(new NotificationCompat.InboxStyle()
+                        .addLine("Here is the first one")
+                        .addLine("This is the second one")
+                        .addLine("Yay Last one")
+                        .setBigContentTitle("LEARN MORE")
+                        .setSummaryText("+1 more"));
         notificationManager.notify(NOTIFICATION_ID,builder.build());
 
     }
